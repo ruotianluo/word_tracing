@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>✏️ Fun Tracing Adventure! 🌟</title>
+    <meta name="description" content="A fun educational app for kids to learn letters, numbers, and words through tracing!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Celebration overlay -->
+    <div id="celebration" class="celebration hidden">
+        <div class="stars-container" id="starsContainer"></div>
+        <div class="celebration-text">⭐ Great Job! ⭐</div>
+    </div>
+
+    <!-- Main container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">✏️ Tracing Fun! 🎨</h1>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </header>
+
+        <!-- Navigation tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-section="letters" id="lettersTab">
+                <span class="tab-icon">🔤</span>
+                <span class="tab-text">Letters</span>
+            </button>
+            <button class="nav-tab" data-section="numbers" id="numbersTab">
+                <span class="tab-icon">🔢</span>
+                <span class="tab-text">Numbers</span>
+            </button>
+            <button class="nav-tab" data-section="words" id="wordsTab">
+                <span class="tab-icon">📖</span>
+                <span class="tab-text">Words</span>
+            </button>
+        </nav>
+
+        <!-- Main content area -->
+        <main class="main-content">
+            <!-- Character display and selection -->
+            <div class="character-display">
+                <button class="nav-arrow left" id="prevBtn" aria-label="Previous">
+                    <span>◀</span>
+                </button>
+                <div class="current-character" id="currentCharacter">A</div>
+                <button class="nav-arrow right" id="nextBtn" aria-label="Next">
+                    <span>▶</span>
+                </button>
+            </div>
+
+            <!-- Tracing canvas area -->
+            <div class="canvas-container">
+                <canvas id="guideCanvas" class="guide-canvas"></canvas>
+                <canvas id="tracingCanvas" class="tracing-canvas"></canvas>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="action-buttons">
+                <button class="action-btn clear-btn" id="clearBtn">
+                    <span class="btn-icon">🧹</span>
+                    <span class="btn-text">Clear</span>
+                </button>
+                <button class="action-btn check-btn" id="checkBtn">
+                    <span class="btn-icon">✅</span>
+                    <span class="btn-text">Check</span>
+                </button>
+                <button class="action-btn hint-btn" id="hintBtn">
+                    <span class="btn-icon">💡</span>
+                    <span class="btn-text">Hint</span>
+                </button>
+            </div>
+
+            <!-- Character picker for quick selection -->
+            <div class="character-picker" id="characterPicker">
+                <!-- Dynamically populated -->
+            </div>
+        </main>
+
+        <!-- Fun mascot -->
+        <div class="mascot" id="mascot">
+            <div class="mascot-body">🦊</div>
+            <div class="speech-bubble" id="speechBubble">Let's trace together!</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
